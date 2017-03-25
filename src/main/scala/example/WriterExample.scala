@@ -13,6 +13,7 @@ object WriterExample {
 
   def main(args: Array[String]): Unit = {
 
+    // Scala's for-comprehensions are equivalent to Haskell's do-notation
     val x: ResultWriter = for {
         y <- foo(1)
         z <- foo(2)
