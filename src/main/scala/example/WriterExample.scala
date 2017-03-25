@@ -13,22 +13,22 @@ object WriterExample {
 
   def main(args: Array[String]): Unit = {
 
-    val x = for {
+    val x: ResultWriter = for {
         y <- foo(1)
         z <- foo(2)
       } yield {
         y + z
       }
 
-    val (log, result) = x.run.swap
+    val (log: Log, result: Result) = x.run
 
     println(result)
     println(log)
   }
 
   private def foo(someArg: Int): ResultWriter = {
-    val log = List(s"Called bar with: $someArg")
-    val result = someArg * 2
+    val log: Log = List(s"Called bar with: $someArg")
+    val result: Result = someArg * 2
     result.set(log)
   }
 
