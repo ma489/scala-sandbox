@@ -7,7 +7,7 @@ import Scalaz._
 object WriterExample {
 
   type LogMessage = String
-  type Log = List[String]
+  type Log = List[LogMessage]
   type Result = Int
   type ResultWriter = Writer[Log, Result]
 
